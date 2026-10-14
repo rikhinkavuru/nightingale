@@ -32,6 +32,7 @@ export async function dispatchCheckin(patient: Patient, clinic: Clinic, opts: { 
   if (!opts.force && prior.some((c) => c.risk && c.risk !== "unreachable")) return prior[0];
   if (!opts.force && attempt > MAX_ATTEMPTS) return prior[0];
 
+  if (provider.mode === "live" && /^\+1555555\d{4}$/.test(patient.phone)) throw new Error("Refusing to place a live call to a fictional demo number.");
   const previous = await lastCompleted(patient.id, day);
   const task = buildCheckinTask(
     { firstName: patient.firstName, locale: patient.locale, regimen: patient.regimen, lastInfusionDate: patient.lastInfusionDate, clinicName: clinic.name, clinicPhone: clinic.onCallPhone, caregiverName: patient.caregiverName },

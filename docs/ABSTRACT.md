@@ -1,0 +1,9 @@
+# Nightingale — abstract (≤ 300 words)
+
+Patients on chemotherapy are told: call if you get a fever, call if you can't keep fluids down. Then they go home, where the median patient is 66, may not speak English, and will not open an app. In one prospective study, patients with a fever waited a mean of 21 hours before seeking care. Febrile neutropenia kills several percent of the adults it hospitalizes, and every hour of delay matters. The strongest result in cancer software, a randomized trial in which regular symptom reporting with nurse follow-up extended median survival from 26 to 31 months, was delivered through a web form most of those patients would never use.
+
+Nightingale is an evening phone call. At the hour the patient chose, in their own language, it rings, says it is automated and recorded, and asks the eleven questions a nurse would ask. It grades the answers on the PRO-CTCAE scale nurses already use. Rules, not a model, decide what is urgent tonight (fever, breathing, bleeding, confusion, fluids), what needs a nurse call tomorrow (severe or worsening symptoms, a medication question, a request to talk), and what is fine.
+
+Then it acts. For an urgent finding it tells the patient exactly what to do, places a second call to the clinic's on-call line with a scripted report, leaves the full message if the line goes to voicemail, emails the clinic, and calls the caregiver. Every step and outcome is recorded. The nurse opens a dashboard to tonight's alerts, the patient's own words, the escalation trail, and the transcript.
+
+Built on a voice-agent telephony API with explicit locales (17 languages), a deterministic triage engine with unit tests, and a dashboard that shows seven evenings per patient at a glance. It never gives medical advice, never softens a red flag, and never replaces the nurse. It makes sure the nurse hears tonight, instead of the ER tomorrow.

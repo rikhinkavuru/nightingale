@@ -106,7 +106,7 @@ export default async function Dashboard({ params }: { params: Promise<{ slug: st
                 <th className="px-2 py-2.5 font-semibold">Language</th>
                 <th className="px-2 py-2.5 font-semibold">Regimen</th>
                 <th className="px-2 py-2.5 font-semibold">Calls at</th>
-                <th className="px-2 py-2.5 font-semibold">{days.map((d) => d.slice(5)).join(" · ")}</th>
+                <th className="px-2 py-2.5 font-semibold"><span className="flex gap-1.5">{days.map((d) => (<span key={d} className="w-[14px] text-center">{"SMTWTFS"[new Date(d + "T12:00:00").getDay()]}</span>))}</span></th>
                 <th className="px-2 py-2.5 font-semibold">Latest</th>
               </tr>
             </thead>

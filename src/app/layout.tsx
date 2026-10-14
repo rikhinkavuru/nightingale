@@ -7,7 +7,7 @@ const newsreader = Newsreader({ variable: "--font-newsreader", subsets: ["latin"
 const geist = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.APP_URL ?? "http://localhost:3000"),
+  metadataBase: new URL(process.env.APP_URL ?? "https://nightingale-gilt.vercel.app"),
   title: "Nightingale — it calls you every evening",
   description: "An evening phone call that checks on chemotherapy patients in their own language, grades what they say on the scale nurses use, and phones the clinic itself when something is wrong.",
   openGraph: { title: "Nightingale", description: "It calls you every evening.", type: "website" },
